@@ -25,4 +25,4 @@ EXPOSE ${SERVER_PORT}
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
     CMD curl --fail http://localhost:${SERVER_PORT}/health/${SERVICE_NAME}/status || exit 1
 
-ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=${SPRING_PROFILES_ACTIVE}", "--server.port=${SERVER_PORT}"]
+ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=${SPRING_PROFILES_ACTIVE}"]
